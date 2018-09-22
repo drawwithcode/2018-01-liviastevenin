@@ -10,6 +10,11 @@ function setup() {
 function draw() {
 	background(249, 201, 111);
 
+	//ground
+	noStroke();
+  fill(209,233,242);
+  ellipse(255,465,200,50);
+
 	//Wheel
 	fill (49,54,56);
 	strokeWeight(0);
@@ -73,7 +78,7 @@ function draw() {
 
 	//Antenna top
 	fill (49,54,56);
-	rect(230, 210, 45, 35,20,20,5,5);
+	rect(230, 220, 45, 35,20,20,5,5);
 
 	//Head
 	strokeJoin(ROUND);

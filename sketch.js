@@ -1,3 +1,5 @@
+var bck=0;
+
 function setup() {
 	// define artboard size
 	createCanvas(500,500);
@@ -5,10 +7,31 @@ function setup() {
 	stroke(170);
 	smooth();
 	angleMode(DEGREES);
+	background(249, 201, 111);
+	for (var i = 0; i < 50; i++) {
+		noStroke();
+		fill(255, 255, 254,25);
+		ellipse(random(0, width), random(0, height), 100);
+	}
+
+}
+
+function mousePressed(){
+	if(bck==0){
+		background(0, 51, 153);
+		bck=1
+	} else if(bck==1){
+		background(249, 201, 111);
+		bck=0;
+	}
+	for (var i = 0; i < 50; i++) {
+		noStroke();
+		fill(255, 255, 254,25);
+		ellipse(random(0, width), random(0, height), 100);
+	}
 }
 
 function draw() {
-	background(249, 201, 111);
 
 	//ground
 	noStroke();
@@ -23,6 +46,11 @@ function draw() {
 
 	fill (220);
 	rect(247, 425,7,10);
+
+     //shadow
+	   fill (91,96,100);
+     rect(243, 442, 4, 23,20,20,20,20);
+
 
 	//left arm
 	strokeWeight(13);
@@ -79,6 +107,9 @@ function draw() {
 	//Antenna top
 	fill (49,54,56);
 	rect(230, 220, 45, 35,20,20,5,5);
+     	//shadow
+	    fill (91,96,100);
+	    arc (240, 238, 8, 23,180,280);
 
 	//Head
 	strokeJoin(ROUND);
@@ -90,12 +121,26 @@ function draw() {
 	fill (49,54,56);
 	rect(305, 255, 20, 45,5,20,20,5);
 
+		//shadow
+		fill (91,96,100);
+		rect(315, 260, 4, 30,20,20,20,20);
+
 	//Antenna left
-	rect(180, 255, 20, 45,20,5,5,20);
 	fill (49,54,56);
+	rect(180, 255, 20, 45,20,5,5,20);
+
+			//shadow
+			fill (91,96,100);
+			rect(185, 260, 4, 30,20,20,20,20);
+
 
 	//head string
+	fill (49,54,56);
 	rect(200, 306, 105, 20,5,5,20,20);
+
+		//shadow
+	  fill (91,96,100);
+		arc (210, 320, 8, 23,180,280);
 
 	//eyes
 	fill (0);
@@ -112,9 +157,6 @@ function draw() {
 	stroke(0);
 	strokeWeight(2);
 	arc(252, 280, 25, 22, 0,180);
-
-
-
 
 
 }
